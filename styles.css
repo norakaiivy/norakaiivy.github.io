@@ -1,0 +1,44 @@
+body {
+  background: linear-gradient(to right, #9737B5, #98CD8F, #C18391);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background 5s;
+  font-family: sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+.chat-bubble {
+  display: flex;
+  align-items: center;
+}
+
+textarea {
+  width: 80%;
+  height: 200px;
+  border-radius: 20px;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+#enter-button {
+  background-color: #9737B5;
+  color:
+white;
+border-radius: 20px;
+padding: 10px 20px;
+font-family: sans-serif;
+margin-left: 10px;
+}
+
+#response {
+font-family: sans-serif;
+margin: 20px;
+width: 80%;
+height: 200px;
+border-radius: 20px;
+padding: 20px;
+background-color: white;
+}
