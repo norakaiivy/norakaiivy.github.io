@@ -5,6 +5,24 @@ body {
   transition: background 5s;
   font-family: sans-serif;
 }
+@keyframes background-transition {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-image: linear-gradient(to right, #C18391, #98CD8F, #9737B5);
+}
+}
+
 
 header {
   text-align: center;
