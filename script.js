@@ -12,7 +12,7 @@ enterBtn.addEventListener("click", async () => {
 });
 
 async function rewriteEmail(text) {
-    const prompt = "Rewrite this email, be more concise & direct, and reduce word count by 25%: " + text + " from the text bot";
+    const prompt = "Rewrite this email, be more concise & direct, and warm but direct%: " + text + " from the text bot";
     const apiUrl = "https://api.openai.com/v1/engines/text-davinci-003/completions";
     const options = {
         method: "POST",
