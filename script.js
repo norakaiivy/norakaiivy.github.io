@@ -1,8 +1,8 @@
 const enterBtn = document.getElementById("enter-btn");
 const inputText = document.getElementById("input-text");
 const responseDiv = document.getElementById("response");
-const API_KEY = "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";
-
+ // Use the API key stored in the environment variable
+  const apiKey = process.env.API_KEY;
 enterBtn.addEventListener("click", async () => {
     const text = inputText.value;
     // send request to OpenAI API to rewrite text
