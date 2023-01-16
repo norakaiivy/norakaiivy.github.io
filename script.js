@@ -1,8 +1,11 @@
 const enterBtn = document.getElementById("enter-btn");
 const inputText = document.getElementById("input-text");
 const responseDiv = document.getElementById("response");
+
+
  // Use the API key stored in the environment variable
-  const apiKey = process.env.API_KEY;
+const apiKey = localStorage.getItem('API_KEY');
+
 
 fetch('http://localhost:3000/proxy', {
     method: 'POST',
@@ -14,7 +17,7 @@ fetch('http://localhost:3000/proxy', {
     console.log(data);
   });
 
-  
+
 enterBtn.addEventListener("click", async () => {
     const text = inputText.value;
     // send request to OpenAI API to rewrite text
