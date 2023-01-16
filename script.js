@@ -20,7 +20,7 @@ async function rewriteEmail(text) {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${API_KEY}`
         },
-        body: JSON.stringify({ prompt: prompt, temperature: 0.6, max_tokens: 50})
+        body: JSON.stringify({ prompt: prompt, temperature: 0.6, max_tokens: 100})
     };
     try {
       const response = await fetch(apiUrl, options);
@@ -34,6 +34,6 @@ async function rewriteEmail(text) {
       return json.choices[0].text;
     } catch (e) {
       console.log(e);
-      return "An error occurred, please try again later.";
+      return "Try again soon! Chat GTP is down for now.";
     }
 }
