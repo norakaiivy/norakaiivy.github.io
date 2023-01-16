@@ -1,33 +1,28 @@
+const enterBtn = document.getElementById("enter-btn");
+const inputText = document.getElementById("input-text");
+const responseDiv = document.getElementById("response");
+const API_KEY = "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";
 
-const textInput = document.getElementById("text-input");
-const enterButton = document.getElementById("enter-button");
-const response = document.getElementById("response");
-
-const API_KEY = "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";
-
-enterButton.addEventListener("click", async () => {
-  const text = textInput.value;
-  const responseData = await postData("https://api.openai.com/v1/engines/davinci/completions", {
-    prompt: `Rewrite the following email: ${text}`,
-    api_key: API_KEY
-  });
-  const responseText = responseData.choices[0].text;
-  response.innerHTML = responseText;
+enterBtn.addEventListener("click", async () => {
+    const text = inputText.value;
+    // send request to OpenAI API to rewrite text
+    const rewriteText = await rewriteEmail(text);
+    // display response on webpage
+    responseDiv.innerHTML = rewriteText;
 });
 
-async function postData(url = "", data = {}) {
-  // Default options are marked with *
-  const response = await fetch(url, {
-    method: "POST", // *GET, POST, PUT, DELETE, etc.
-    mode: "cors", // no-cors, *cors, same-origin
-    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: "same-origin", // include, *same-origin, omit
-    headers: {
-      "Content-Type": "application/json"
-    },
-    redirect: "follow", // manual, *follow, error
-    referrer: "no-referrer", // no-referrer, *client
-    body: JSON.stringify(data) // body data type must match "Content-Type" header
-  });
-  return await response.json(); // parses JSON response into native JavaScript objects
+async function rewriteEmail(text) {
+    const prompt = "Rewrite this email, be more concise & direct, and reduce word count by 25%: " + text + " from the text bot";
+    const apiUrl = "https://api.openai.com/v1/engines/text-davinci-003/completions";
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${API_KEY}`
+        },
+        body: JSON.stringify({ prompt: prompt, temperature: 0.6, max_tokens: 50})
+    };
+    const response = await fetch(apiUrl, options);
+    const json = await response.json();
+    return json.choices[0].text;
 }
