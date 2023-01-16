@@ -20,7 +20,7 @@ async function rewriteEmail(text) {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${API_KEY}`
         },
-        body: JSON.stringify({ prompt: prompt, temperature: 0.6, max_tokens: 100})
+        body: JSON.stringify({ prompt: prompt, temperature: 0.6, max_tokens: 90})
     };
     try {
       const response = await fetch(apiUrl, options);
