@@ -1,6 +1,8 @@
 const enterBtn = document.getElementById("enter-btn");
 const inputText = document.getElementById("input-text");
 const responseDiv = document.getElementById("response");
+require('dotenv').config()
+
 
 
  // Use the API key stored in the environment variable
