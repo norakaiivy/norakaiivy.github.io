@@ -1,7 +1,7 @@
 const enterBtn = document.getElementById("enter-btn");
 const inputText = document.getElementById("input-text");
 const responseDiv = document.getElementById("response");
-const API_KEY = "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";
+const API_KEY = "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";
 
 enterBtn.addEventListener("click", async () => {
     const text = inputText.value;
