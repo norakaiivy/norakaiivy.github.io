@@ -3,6 +3,18 @@ const inputText = document.getElementById("input-text");
 const responseDiv = document.getElementById("response");
  // Use the API key stored in the environment variable
   const apiKey = process.env.API_KEY;
+
+fetch('http://localhost:3000/proxy', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ text: 'User input text' })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  });
+
+  
 enterBtn.addEventListener("click", async () => {
     const text = inputText.value;
     // send request to OpenAI API to rewrite text
@@ -37,3 +49,4 @@ async function rewriteEmail(text) {
       return "Chat GTP Is down. Try again soon!";
     }
 }
+
