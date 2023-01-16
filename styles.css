@@ -1,62 +1,53 @@
-body {
-  background: linear-gradient(to right, #9737B5, #98CD8F, #C18391);
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: background 5s;
-  font-family: sans-serif;
+/* styles for text box and button */
+      #textbox {
+        width: 30%;
+        margin: 20px auto;
+        text-align: left;
+        border-radius: 20px;
+        padding: 10px;
+        font-size: 18px;
+        max-width: 250px;
+        height: 50px;
+        display: flex;
+        border: 1px solid lightgray;
+      }
+
+      #input-text {
+        width: 80%;
+        height: 100%;
+        border: none;
+        padding: 0;
+        font-size: 18px;
+      }
+
+      #enter-btn {
+        background-color: blue;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 20px;
+        height: 50px;
+        align-self: center;
+        margin-left: 10px;
+      }
+      
+      /* added to match style of text box */
+      #response {
+        width: 30%;
+        margin: 20px auto;
+        text-align: center;
+        border-radius: 20px;
+padding: 10px;
+font-size: 18px;
+max-width: 250px;
+height: 50px;
+display: flex;
 }
-@keyframes background-transition {
-  0% {
-    background-position: 0% 50%;
+ /* added for footer */
+  footer {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    background-image: linear-gradient(to right, #C18391, #98CD8F, #9737B5);
-}
-}
-
-
-header {
-  text-align: center;
-}
-
-.chat-bubble {
-  display: flex;
-  align-items: center;
-}
-
-textarea {
-  width: 80%;
-  height: 200px;
-  border-radius: 20px;
-  padding: 20px;
-  font-family: sans-serif;
-}
-
-#enter-button {
-  background-color: #9737B5;
-  color:
-white;
-border-radius: 20px;
-padding: 10px 20px;
-font-family: sans-serif;
-margin-left: 10px;
-}
-
-#response {
-font-family: sans-serif;
-margin: 20px;
-width: 80%;
-height: 200px;
-border-radius: 20px;
-padding: 20px;
-background-color: white;
-}
