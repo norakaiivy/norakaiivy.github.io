@@ -34,6 +34,6 @@ async function rewriteEmail(text) {
       return json.choices[0].text;
     } catch (e) {
       console.log(e);
-      return "Chat GTP Is down.";
+      return "Chat GTP Is down. Try again soon!";
     }
 }
