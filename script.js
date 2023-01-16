@@ -1,7 +1,7 @@
 const enterBtn = document.getElementById("enter-btn");
 const inputText = document.getElementById("input-text");
 const responseDiv = document.getElementById("response");
-const API_KEY = "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";
+const API_KEY = "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";
 
 enterBtn.addEventListener("click", async () => {
     const text = inputText.value;
@@ -34,6 +34,6 @@ async function rewriteEmail(text) {
       return json.choices[0].text;
     } catch (e) {
       console.log(e);
-      return "Try again soon! Chat GTP is down for now.";
+      return "Chat GTP Is down.";
     }
 }
