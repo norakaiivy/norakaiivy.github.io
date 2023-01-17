@@ -8,6 +8,7 @@ require('dotenv').config()
 require('dotenv')
 console.log(process.env)
 
+import 'dotenv/config'
 
 
  // Use the API key stored in the environment variable
