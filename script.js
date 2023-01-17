@@ -1,10 +1,13 @@
 const enterBtn = document.getElementById("enter-btn");
 const inputText = document.getElementById("input-text");
 const responseDiv = document.getElementById("response");
+const dotenv = require('dotenv')
+dotenv.config()
 
 require('dotenv').config()
 require('dotenv')
 console.log(process.env)
+
 
 
  // Use the API key stored in the environment variable
